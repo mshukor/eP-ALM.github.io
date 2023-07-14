@@ -231,6 +231,37 @@
 <br>
 <br>
 
+<section class="section grey">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <h3 class="title is-3">Findings and Contributions</h3>
+      <div class="content has-text-justified">
+        <p>
+          <ul>
+          <li>Training a single linear layer directly on downstream multimodal datasets, and following the same setup, 
+            outperforms other work on Image/Video/Audio-Language tasks. With a few additional trainable parameters and a 
+            single learned prepended token, we can significantly improve the performance, while respecting a budget of 1 %  of trainable parameters, 
+            and keeping almost the same inference cost.</li>
+
+          <li>With only a single learned prepended token, performances increase with almost the same inference cost.</li>
+      
+          <li>Our approach enjoys better generalization (OOD, Zero-Shot) and is data-efficient (training on 1 % of the data achieves 80 % of performances) 
+            with better few-shot results than other approaches.</li>
+      
+          <li>While reaching good performance with small to mid-scale language models (i.e, 350M-2.7B) the improvement still 
+            increases by jointly scaling both vision and language models. When scaling both models, we can still outperform other approaches 
+            with only 0.06 % of trainable parameters.</li>
+      
+          <li>Existing approaches do not behave well on the proposed challenging setup, without large multi-modal pretraining.</li>
+
+        </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
 <!-- Method -->
 <section class="section grey">
   <div class="columns is-centered has-text-centered">
@@ -240,10 +271,38 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p> 
-            LLM 
-            Perceptual encoder 
-            ...
-           </p>
+            We adopt OPT models, which are autoregressive language decoders consisting of Self-Attention and Feed Forward layers. 
+            They are trained with <i>next token prediction</i> objective on 180B tokens mostly in English and gathered from different datasets. Our model is based on the following main points:
+            <br>
+            <strong>Perceptual Encoders:</strong> we favor only unimodal models. For images, we use the vanilla ViT model pretrained for image classification 
+            on ImageNet. For Video, we use TimeSformer that consists of a ViT-like model augmented with temporal attention and pretrained on kinetics. 
+            For Audio, we adopt AST, a vanilla adaptation of ViT to digest spectrograms, that is pretrained on AudioSet. 
+            Even though we consider only these 3 encoders, the extension of the approach to other types of encoders and modalities is straightforward.
+            
+            <br>
+            <strong>Perceptual Prompt Injection:</strong>  LMs are usually controlled via different textual prompts, such as questions and instructions. 
+            Here, the LM is controlled by both the text and the perceptual encoders. Specifically, the projected perceptual tokens are prepended to the 
+            textual tokens. Naively using all visual tokens, adds significant computation costs during training and inference, 
+            due to the quadratic complexity of attention layers with the number of tokens. This becomes more apparent with LLMs. 
+            To mitigate this, we consider only the [CLS] token of the perceptual encoders and prepend it to the text tokens. 
+            This increases the total number of tokens by 1 which maintains almost the same inference speed.
+            <br>
+            <strong>Connecting Models with Cross-Modal Hierarchical Linear layers:</strong> when freezing the perceptual encoders and language models, 
+            the minimal number of trainable parameters are those that amount to connecting these two models while adjusting the embedding dimensions in case 
+            of a mismatch. Therefore, we base our approach on this constraint and train only one linear projection layer to connect both models. 
+            To exploit the hierarchical representation encoded in pretrained models, instead of taking only the [CLS] token of the last output layer, 
+            we take the [CLS] tokens from several layers of the perceptual model, and we inject these tokens into several layers of the LM (shared connection). 
+            The tokens coming from early layers are injected earlier and are then replaced by those coming from deeper layers. 
+            We favor only the deeper layers (e.g., the last 6 layers of the ViT-B/16, and the last 12 layers of OPT-350M) where the representations 
+            are more abstract and less modality-specific. Moreover, using the same linear projection at different representation levels might not help 
+            to capture the particularity of such a hierarchy, to this end, we also experiment with different linear layers for each level (multiple connections). 
+            <br>
+            <strong>Multimodal Adaptation with Parameter-Efficient Techniques:</strong> we explore several parameter-efficient techniques to ease 
+            the adaptation to multimodal tasks. The main technique we use is <i>Prompt Tuning</i>: it consists of prepending trainable tokens or 
+            Soft Prompts to the textual tokens input of the LM. This gives useful context to steer the model output. 
+            Contrary to hard prompts that are manually engineered, this provides a more flexible and easier approach for task-dependant contextualization. 
+            For the sake of efficiency, we prepend only 10 learnable tokens. We also experiment <i>Adapters</i> .
+          </p>
         </div>
       </div>
     </div>
