@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="eP-ALM">
+  <meta name="keywords" content="eP-ALM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eP-ALM</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body publication-header">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1">eP-ALM <br> eP-ALM</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=lhp9mRgAAAAJ&view_op=list_works&sortby=pubdate">Mustafa Shukor</a>, 
+            </span>
+            <span class="author-block">
+              <a href="https://cdancette.fr/">Corentin Dancette</a>, 
+            </span>
+            <span class="author-block">
+              <a href="https://cord.isir.upmc.fr/">Matthieu Cord</a>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Sorbonne University &nbsp; </span>
+          </div>
+
+          <!-- <div class="is-size-10 publication-authors">
+            (*Equal contribution)
+          </div> -->
+          
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://aps.arxiv.org/abs/2303.11403"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/mshukor/eP-ALM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- <span class="link-block">
+                <a href="https://"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src = "static/images/colab-logo.svg" alt="colab-logo"/>
+                  </span>
+                  <span>Colab</span>
+                  </a>
+              </span> -->
+
+
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/mshukor/eP-ALM?logs=build"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src = "static/images/hf-logo.svg" alt="hf-logo"/>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              </span>
+
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#bibtex"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>BibTex</span>
+                  </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div align="center" style="margin-top:0px; margin-bottom:0px;">
+  <div class="teaser-padding">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+
+          <figure class="teaser">
+            <img class="teaser-image" src="static/images/teaser.pdf"/>
+            <!-- <figcaption class="teaser-overlay">
+              <div class="teaser-meta">
+                <span class="teaser-title">This is.</span>
+                <p class="teaser-description">Lilith is .</p>
+              </div>
+            </figcaption> -->
+          </figure>
+
+          <!-- <div class="item item-toby">
+            <video poster="" autoplay playsinline muted loop>
+              <source type="video/mp4" src="static/videos/teaser_video_1_compressed.mp4" />
+            </video>
+          </div> -->
+        
+        </div>
+      </div>
+      <h3 class="subtitle has-text-centered">
+          <font size="4">
+          <span class="dnerf"></span>
+          Image Captioning with eP-ALM
+        </font>
+      </h3>
+    </div>
+  </div>
+</div>  
+
+<!-- <div align="center" style="margin-top:0px; margin-bottom:0px;">
+  <div class="carousel-teaser-padding">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-toby">
+            <video poster="" autoplay playsinline muted loop>
+                <source type="video/mp4" src="static/videos/teaser_video_0_compressed.mp4" /> 
+            </video>
+          </div>
+
+          <div class="item item-toby">
+            <video poster="" autoplay playsinline muted loop>
+              <source type="video/mp4" src="static/videos/teaser_video_4_compressed.mp4" /> 
+            </video>
+          </div>
+
+          <div class="item item-toby">
+            <video poster="" autoplay playsinline muted loop>
+              <source type="video/mp4" src="static/videos/teaser_video_2_compressed.mp4" />
+            </video>
+          </div>
+
+          <div class="item item-toby">
+            <video poster="" autoplay playsinline muted loop>
+              <source type="video/mp4" src="static/videos/teaser_video_3_compressed.mp4" />
+            </video>
+          </div>
+
+          <div class="item item-toby">
+            <video poster="" autoplay playsinline muted loop>
+              <source type="video/mp4" src="static/videos/teaser_video_1_compressed.mp4" />
+            </video>
+          </div>
+        
+        </div>
+      </div>
+      <h3 class="subtitle has-text-centered">
+          <font size="4">
+          <span class="dnerf"></span>
+          Without explict supervision, Diffusion Features can find correspondences on real images across instances, categories, and even domains.
+        </font>
+      </h3>
+    </div>
+  </div>
+</div>  -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Large Language Models (LLMs) have so far impressed the world, with unprecedented capabilities that emerge in models at large scales. 
+            On the vision side, transformer models (\emph{i.e.}, ViT) are following the same trend, achieving the best performance on challenging benchmarks. 
+            With the abundance of such unimodal models, a natural question arises; <strong><i> do we also need to follow this trend to tackle multimodal tasks? </i></strong> 
+            In this work, we propose to rather <i>direct effort to efficient adaptations of existing models</i>, and propose to augment Language Models with perception. 
+            Existing approaches for adapting pretrained models for vision-language tasks still rely on several key components that hinder their efficiency. 
+            In particular, they still train a large number of parameters, rely on large multimodal pretraining, use encoders (e.g., CLIP) trained on huge image-text datasets, and add significant inference overhead. 
+            In addition, most of these approaches have focused on Zero-Shot and In Context Learning, with little to no effort on direct finetuning. 
+            We investigate the minimal computational effort needed to adapt unimodal models for multimodal tasks and propose a new challenging setup, alongside different approaches, 
+            that efficiently adapts unimodal pretrained models. We show that by freezing more than <strong> 99% </strong> of total parameters, 
+            training only one linear projection layer, and prepending only one trainable token, 
+            our approach (dubbed eP-ALM) significantly outperforms other baselines on VQA and Captioning across Image, Video, and Audio modalities, following the proposed setup, 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<br>
+<br>
+
+<!-- Method -->
+<section class="section grey">
+  <div class="columns is-centered has-text-centered">
+    <h3 class="title is-3 margin-bottom-8">Model </h3>
+  </div>
+  <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p> 
+            LLM 
+            Perceptual encoder 
+            ...
+           </p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="teaser">
+      <img class="teaser-image" src="static/images/arch.pdf"/>
+      <!-- <figcaption class="teaser-overlay">
+        <div class="teaser-meta">
+          <span class="teaser-title">This is.</span>
+          <p class="teaser-description">Lilith is .</p>
+        </div>
+      </figcaption> -->
+    </figure>
+
+  <br>
+
+  <!-- <div class="columns is-centered has-text-centered">
+    <h3 class="title is-3">Image Editing with DIFT</h3>
+  </div>
+ <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p> DIFT can easily propagate edits from one image to others across different instances, categories, and domains, without any correspondence supervision. </p>
+        </div>
+      </div>
+    </div>
+  <div class="carousel-extra-padding">
+    <div class="hero-body carousel-body-vert-padding">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-toby">
+            <video poster="" autoplay playsinline controls muted loop>
+                <source type="video/mp4" src="static/videos/image_edit_dog_compressed.mp4" /> 
+            </video>
+          </div>
+
+          <div class="item item-toby">
+            <video poster="" autoplay playsinline controls muted loop>
+              <source type="video/mp4" src="static/videos/image_edit_cat_compressed.mp4" /> 
+            </video>
+          </div>
+
+          <div class="item item-toby">
+            <video poster="" autoplay playsinline controls muted loop>
+              <source type="video/mp4" src="static/videos/image_edit_bird_compressed.mp4" />
+            </video>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div> -->
+</section>
+
+
+<br>
+<br>
+
+<section class="section hero is-small">
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">Discussion </h2>
+  </div>
+  <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p> By us.</p>
+        </div>
+      </div>
+    </div>
+  <div class="carousel-homography-padding">
+    <div class="hero-body carousel-body-vert-padding">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-toby">
+            <img style='height: auto; width: 100%; object-fit: contain' src="static/images/caption.pdf" alt="edit_propagation">
+          </div>
+
+          <div class="item item-toby">
+            <img style='height: auto; width: 100%; object-fit: contain' src="static/images/vqa.pdf" alt="edit_propagation">
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<br>
+<br>
+
+
+
+
+
+<br>
+
+
+
+<section class="section">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <h3 class="title is-3">Acknowledgements</h3>
+      <div class="content has-text-justified">
+        <p>
+          This work was partly supported by ANR grant VISA DEEP (ANR-20-CHIA-0022), 
+          and HPC resources of IDRIS under the allocation 2022-[AD011013415] and 2023-[AD011013415R1] made by GENCI. 
+          The authors would like to thank Theophane Vallaeys for fruitful discussion.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+ <br>
+
+
+<section class="section" id="BibTeX">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <h3 class="title is-3">BibTeX</h3>
+    </div>
+ </div>
+  <div class="container is-max-desktop content">
+    <pre><code>
+      @article{shukor2023ep,
+        title={eP-ALM: Efficient Perceptual Augmentation of Language Models},
+        author={Shukor, Mustafa and Dancette, Corentin and Cord, Matthieu},
+        journal={arXiv preprint arXiv:2303.11403},
+        year={2023}
+      }      
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div align="center" class="container">
+    <div class="columns is-centered">
+        <div class="content">
+            This website is borrowed from <a href="https://diffusionfeatures.github.io/">.
+        </div>
+      </div>
+    </div>
+</footer>
+
+</body>
+</html>
