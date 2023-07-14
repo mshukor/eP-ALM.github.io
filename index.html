@@ -123,7 +123,7 @@
         <!-- <div id="results-carousel" class="carousel results-carousel"> -->
 
         <figure class="teaser">
-          <img class="teaser-image" style='height: auto; width: 70%; object-fit: contain' src="static/images/teaser.jpg"/>
+          <img class="teaser-image" style='height: auto; width: 60%; object-fit: contain' src="static/images/teaser.jpg"/>
           <!-- <figcaption class="teaser-overlay">
             <div class="teaser-meta">
               <span class="teaser-title">This is.</span>
@@ -307,8 +307,8 @@
       </div>
     </div>
 
-    <figure class="teaser">
-      <img class="teaser-image" style='height: auto; width: 70%; object-fit: contain' src="static/images/arch.jpg"/>
+    <figure class="teaser center">
+      <img class="teaser-image" style='height: auto; width: 60%; object-fit: contain' src="static/images/arch.jpg"/>
       <!-- <figcaption class="teaser-overlay">
         <div class="teaser-meta">
           <span class="teaser-title">This is.</span>
@@ -359,6 +359,148 @@
 </section>
 
 
+<!-- ############ -->
+<section class="section hero is-small">
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">Experiments</h2>
+  </div>
+  <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p> We compare with other end-to-end trained SoTA that takes only
+            the audio signal as input and show that our approach is
+            very competitive with previous work, showing the potential
+            of efficient adaptation of LM for the audio modality..</p>
+        </div>
+      </div>
+  </div>
+
+  <figure class="teaser center">
+      <img class="teaser-image" style='height: auto; width: 50%; object-fit: contain' src="static/images/audio.png"/>
+      <figcaption class="teaser-overlay">
+        <div class="teaser-meta">
+          <span class="teaser-title">This is.</span>
+          <p class="teaser-description"> Comparison with other work that train most of the model parameters for Audio Captioning on AudioCaps
+            Test set.</p>
+        </div>
+      </figcaption>
+  </figure>
+
+
+
+
+
+<!-- ############ -->
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <div class="content has-text-justified">
+        <p> To explore the generalization of our approach, we evaluate on Zero-Shot for VideoQA, where the model is trained on a dataset 
+          different from the target one. Table below shows that eP-ALM, trained on VQA v2 (standard split), outperforms other approaches 
+          trained on significantly more data. 
+          Contrary to some of other approaches that cast the task as classification (similarity-based)  or constrained generation through masking, 
+          considering only a subset of answers (1k or 2k), our approach is evaluated (with a character-wise comparison with the ground-truth) 
+          with unconstrained Open-ended Generation (OE Gen) and can generate answers with arbitrary lengths. </p>
+      </div>
+    </div>
+</div>
+
+<figure class="teaser center">
+    <img class="teaser-image" style='height: auto; width: 50%; object-fit: contain' src="static/images/zs_vid.png"/>
+    <figcaption class="teaser-overlay">
+      <div class="teaser-meta">
+        <span class="teaser-title">This is.</span>
+        <p class="teaser-description"> Zero-Shot results on Video QA. OE Gen: unconstrained Open-
+          Ended Generation. † evaluated on questions with top 1k answers.</p>
+      </div>
+    </figcaption>
+</figure>
+
+
+<!-- ############ -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="content has-text-justified">
+      <p> Here we investigate whether our parameter-efficient approach can perform well in OOD scenarios.
+         To this end, we follow other approaches  and train our model on the training set of a given benchmark, and evaluate it on the validation set of 
+         another benchmark, without multimodal pretraining. We measure the performance gap, i.e. the accuracy difference between a model trained 
+         on a different benchmark and the same model trained on the target benchmark.
+         Table below shows that eP-ALM, which trains 0.06\% of total parameters, is very competitive in terms of OOD accuracy with other baselines, 
+         that train all model parameters and pretrain on large amount of data. 
+         This reveals that our parameter-efficient approach generalizes relatively well in OOD scenarios.</p>
+    </div>
+  </div>
+</div>
+
+<figure class="teaser center">
+  <img class="teaser-image" style='height: auto; width: 50%; object-fit: contain' src="static/images/vqa_gen.png"/>
+  <figcaption class="teaser-overlay">
+    <div class="teaser-meta">
+      <span class="teaser-title">This is.</span>
+      <p class="teaser-description"> Out-Of-Distribution Generalization on GQA and VQA v2 (stan-
+        dard split). The Gap shows the performance degradation when the model is
+        trained on a different dataset.</p>
+    </div>
+  </figcaption>
+</figure>
+
+<!-- ############ -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="content has-text-justified">
+      <p> In this section, we investigate how data-efficient our model can be.
+         To this end, we train on a very small portion (randomly sampled) from the VQA training set and evaluate on the validation set.  
+         Table below, shows the superiority of our approach over other baselines. 
+         Interestingly, we can achieve 80\% (41.9 vs 52.77) of the performance when training on 1\% of the data. 
+         This validates the approach on low resources scenarios and shows that, in addition to being parameter-efficient, our model is also data-efficient.</p>
+    </div>
+  </div>
+</div>
+
+<figure class="teaser center">
+  <img class="teaser-image" style='height: auto; width: 50%; object-fit: contain' src="static/images/fewshot.png"/>
+  <figcaption class="teaser-overlay">
+    <div class="teaser-meta">
+      <span class="teaser-title">This is.</span>
+      <p class="teaser-description"> Few-shot Results on VQA v2 validation set (standard split). ∗:
+        longer training.</p>
+    </div>
+  </figcaption>
+</figure>
+<!-- ############ -->
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="content has-text-justified">
+      <p> To contextualize the work, we compare eP-ALM to other SoTA that trains large number of parameters and most often with large-scale pretraining. 
+        Table below shows a comparison with both zero-shot (ZS) and Finetuning (FT) setups. 
+        The performance of eP-ALM is generally higher than ZS scores and still below FT ones. 
+        However, the performance gap with FT models, is smaller with the audio and video modalities.</p>
+    </div>
+  </div>
+</div>
+
+<figure class="teaser center">
+  <img class="teaser-image" style='height: auto; width: 50%; object-fit: contain' src="static/images/sota.png"/>
+  <figcaption class="teaser-overlay">
+    <div class="teaser-meta">
+      <span class="teaser-title">This is.</span>
+      <p class="teaser-description"> Comparison of eP-ALM with text generation-based SoTA
+        that train significant number of parameters, including methods with
+        large-scale pretraining. Best and next best scores are bolded and
+        underlined respectively. FT: Finetuning. ZS: Zero-shot.</p>
+    </div>
+  </figcaption>
+</figure>
+<!-- ############ -->
+
+
+</section>
+
+
+
+
+
 <br>
 <br>
 
@@ -369,11 +511,11 @@
   <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
-          <p> By us.</p>
+          <!-- <p> By us.</p> -->
         </div>
       </div>
     </div>
-  <div class="carousel-homography-padding">
+  <div class="carousel-teaser-padding">
     <div class="hero-body carousel-body-vert-padding">
       <div class="container">
         <div id="results-carousel" class="carousel results-carousel">
