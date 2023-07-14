@@ -1,2 +1,2 @@
-# Diffusion Features
-Website for Emergent Correspondence from Image Diffusion 
+# eP-ALM
+Website for eP-ALM: Efficient Perceptual Augmentation of Language Models
