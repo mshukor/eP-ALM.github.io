@@ -35,18 +35,18 @@
           <h1 class="title is-1">eP-ALM: Efficient Perceptual Augmentation of Language Models</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?hl=en&user=lhp9mRgAAAAJ&view_op=list_works&sortby=pubdate">Mustafa Shukor</a>, 
+              <a href="https://scholar.google.com/citations?hl=en&user=lhp9mRgAAAAJ&view_op=list_works&sortby=pubdate">Mustafa Shukor<sup>a</sup></a>, 
             </span>
             <span class="author-block">
-              <a href="https://cdancette.fr/">Corentin Dancette</a>, 
+              <a href="https://cdancette.fr/">Corentin Dancette<sup>a</sup></a>, 
             </span>
             <span class="author-block">
-              <a href="https://cord.isir.upmc.fr/">Matthieu Cord</a>,
+              <a href="https://cord.isir.upmc.fr/">Matthieu Cord<sup>a,b</sup></a>,
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Sorbonne University &nbsp; </span>
+            <span class="author-block">a) Sorbonne University b) Valeo.ai &nbsp; </span>
           </div>
 
           <!-- <div class="is-size-10 publication-authors">
@@ -120,17 +120,17 @@
   <div class="teaser-padding">
     <div class="hero-body">
       <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
+        <!-- <div id="results-carousel" class="carousel results-carousel"> -->
 
-          <figure class="teaser">
-            <img class="teaser-image" src="static/images/teaser.jpg"/>
-            <!-- <figcaption class="teaser-overlay">
-              <div class="teaser-meta">
-                <span class="teaser-title">This is.</span>
-                <p class="teaser-description">Lilith is .</p>
-              </div>
-            </figcaption> -->
-          </figure>
+        <figure class="teaser">
+          <img class="teaser-image" style='height: auto; width: 70%; object-fit: contain' src="static/images/teaser.jpg"/>
+          <!-- <figcaption class="teaser-overlay">
+            <div class="teaser-meta">
+              <span class="teaser-title">This is.</span>
+              <p class="teaser-description">Lilith is .</p>
+            </div>
+          </figcaption> -->
+        </figure>
 
           <!-- <div class="item item-toby">
             <video poster="" autoplay playsinline muted loop>
@@ -138,7 +138,7 @@
             </video>
           </div> -->
         
-        </div>
+        <!-- </div> -->
       </div>
       <h3 class="subtitle has-text-centered">
           <font size="4">
@@ -271,6 +271,7 @@
             We adopt OPT models, which are autoregressive language decoders consisting of Self-Attention and Feed Forward layers. 
             They are trained with <i>next token prediction</i> objective on 180B tokens mostly in English and gathered from different datasets. Our model is based on the following main points:
             <br>
+            <br>
             <strong>Perceptual Encoders:</strong> we favor only unimodal models. For images, we use the vanilla ViT model pretrained for image classification 
             on ImageNet. For Video, we use TimeSformer that consists of a ViT-like model augmented with temporal attention and pretrained on kinetics. 
             For Audio, we adopt AST, a vanilla adaptation of ViT to digest spectrograms, that is pretrained on AudioSet. 
@@ -307,7 +308,7 @@
     </div>
 
     <figure class="teaser">
-      <img class="teaser-image" src="static/images/arch.jpg"/>
+      <img class="teaser-image" style='height: auto; width: 70%; object-fit: contain' src="static/images/arch.jpg"/>
       <!-- <figcaption class="teaser-overlay">
         <div class="teaser-meta">
           <span class="teaser-title">This is.</span>
@@ -316,6 +317,7 @@
       </figcaption> -->
     </figure>
 
+    
   <br>
 
   <!-- <div class="columns is-centered has-text-centered">
@@ -362,7 +364,7 @@
 
 <section class="section hero is-small">
   <div class="columns is-centered has-text-centered">
-    <h2 class="title is-3">Discussion </h2>
+    <h2 class="title is-3">Qualitative Results </h2>
   </div>
   <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -376,11 +378,11 @@
       <div class="container">
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item item-toby">
-            <img style='height: auto; width: 100%; object-fit: contain' src="static/images/caption.jpg" alt="edit_propagation">
+            <img style='height: auto; width: 80%; object-fit: contain' src="static/images/caption.jpg" alt="edit_propagation">
           </div>
 
           <div class="item item-toby">
-            <img style='height: auto; width: 100%; object-fit: contain' src="static/images/vqa.jpg" alt="edit_propagation">
+            <img style='height: auto; width: 80%; object-fit: contain' src="static/images/vqa.jpg" alt="edit_propagation">
           </div>
         
         </div>
